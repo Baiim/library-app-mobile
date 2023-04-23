@@ -19,7 +19,13 @@ const WelcomeScreen = ({navigation}) => {
           <Text style={styles.subTitle}>and distilled the knowledge</Text>
         </View>
         <View style={styles.button}>
-          <ButtonComponent text="Start" textColor="#020202" />
+          <ButtonComponent
+            text="Start"
+            textColor="#020202"
+            onPress={() => {
+              navigation.navigate('SignIn');
+            }}
+          />
         </View>
       </View>
     </View>
@@ -40,7 +46,7 @@ const styles = StyleSheet.create({
     marginTop: -30,
     flex: 1,
     paddingTop: 26,
-    paddingHorizontal: 16,
+    paddingHorizontal: 42,
   },
   title: {
     fontSize: 20,
