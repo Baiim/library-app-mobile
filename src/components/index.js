@@ -3,6 +3,7 @@ import HeaderComponent from './Header';
 import Gap from './Gap';
 import TextInputComponent from './TextInput';
 import SelectInputComponent from './SelectInput';
+import BottomNavigatorComponent from './BottomNavigator';
 
 export {
   ButtonComponent,
@@ -10,4 +11,5 @@ export {
   Gap,
   TextInputComponent,
   SelectInputComponent,
+  BottomNavigatorComponent,
 };

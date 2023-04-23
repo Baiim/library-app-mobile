@@ -8,9 +8,42 @@ import {
   SignUp,
   SignUpAddress,
   SuccessSignUp,
+  HomePage,
+  BookPage,
+  BookmarkPage,
+  ProfilePage,
 } from '../pages';
+import {BottomNavigatorComponent} from '../components';
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+const MainApp = () => {
+  return (
+    <Tab.Navigator tabBar={props => <BottomNavigatorComponent {...props} />}>
+      <Tab.Screen
+        name="HomePage"
+        component={HomePage}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="BookPage"
+        component={BookPage}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="BookmarkPage"
+        component={BookmarkPage}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="ProfilePage"
+        component={ProfilePage}
+        options={{headerShown: false}}
+      />
+    </Tab.Navigator>
+  );
+};
 
 const Router = () => {
   return (
@@ -43,6 +76,11 @@ const Router = () => {
       <Stack.Screen
         name="SuccessSignUp"
         component={SuccessSignUp}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="MainApp"
+        component={MainApp}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
