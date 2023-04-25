@@ -23,7 +23,13 @@ const SignIn = ({navigation}) => {
         />
         <Gap height={24} />
         <View>
-          <ButtonComponent text="Login" textColor="#020202" />
+          <ButtonComponent
+            text="Login"
+            textColor="#020202"
+            onPress={() => {
+              navigation.navigate('MainApp');
+            }}
+          />
           <Gap height={12} />
           <ButtonComponent
             text="Create New Account"

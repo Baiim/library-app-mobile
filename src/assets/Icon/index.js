@@ -8,6 +8,7 @@ import ICBookMarkOn from './icon_bookmark_on.svg';
 import ICBookMarkOff from './icon_bookmark_off.svg';
 import ICProfileOn from './icon_profile_on.svg';
 import ICProfileOff from './icon_profile_off.svg';
+import ICNotif from './icon_notif.svg';
 
 export {
   ICBack,
@@ -20,4 +21,5 @@ export {
   ICBookOff,
   ICProfileOn,
   ICProfileOff,
+  ICNotif,
 };
