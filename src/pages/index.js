@@ -8,6 +8,9 @@ import HomePage from './Home';
 import BookPage from './Book';
 import BookmarkPage from './Bookmark/Index';
 import ProfilePage from './Profile';
+import BookDetail from './BookDetail';
+import OrderDetail from './OrderDetail';
+import SuccessOrder from './SuccessOrder';
 
 export {
   SplashScreen,
@@ -20,4 +23,7 @@ export {
   BookPage,
   BookmarkPage,
   ProfilePage,
+  BookDetail,
+  OrderDetail,
+  SuccessOrder,
 };

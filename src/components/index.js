@@ -7,6 +7,8 @@ import BottomNavigatorComponent from './BottomNavigator';
 import HeaderHomeComponent from './HeaderHome';
 import BookCardHomeComponent from './BookCardHome/Index';
 import ButtonCategoryComponent from './ButtonCategory';
+import BookCardComponent from './BookCard';
+import DatePicker from './DatePicker';
 
 export {
   ButtonComponent,
@@ -18,4 +20,6 @@ export {
   HeaderHomeComponent,
   BookCardHomeComponent,
   ButtonCategoryComponent,
+  BookCardComponent,
+  DatePicker,
 };

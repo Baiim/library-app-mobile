@@ -9,6 +9,10 @@ import ICBookMarkOff from './icon_bookmark_off.svg';
 import ICProfileOn from './icon_profile_on.svg';
 import ICProfileOff from './icon_profile_off.svg';
 import ICNotif from './icon_notif.svg';
+import ICBookmark from './ic_bookmark.svg';
+import ICAvailable from './ic_shield_green.svg';
+import ICUnavailable from './ic_shield_red.svg';
+import ICDate from './ic_date.svg';
 
 export {
   ICBack,
@@ -22,4 +26,8 @@ export {
   ICProfileOn,
   ICProfileOff,
   ICNotif,
+  ICBookmark,
+  ICAvailable,
+  ICUnavailable,
+  ICDate,
 };

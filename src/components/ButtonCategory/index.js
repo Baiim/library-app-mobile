@@ -9,10 +9,11 @@ const ButtonCategoryComponent = ({
   width,
   height,
   fontSize,
+  borderWidth,
 }) => {
   return (
     <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
-      <View style={styles.container(color, width, height)}>
+      <View style={styles.container(color, width, height, borderWidth)}>
         <Text style={styles.text(textColor, fontSize)}>{text}</Text>
       </View>
     </TouchableOpacity>
@@ -22,7 +23,7 @@ const ButtonCategoryComponent = ({
 export default ButtonCategoryComponent;
 
 const styles = StyleSheet.create({
-  container: (color, width, height) => ({
+  container: (color, width, height, borderWidth) => ({
     backgroundColor: color,
     padding: 3,
     borderRadius: 8,
@@ -31,6 +32,7 @@ const styles = StyleSheet.create({
     marginRight: 3,
     marginTop: 3,
     alignItems: 'center',
+    borderWidth: borderWidth,
   }),
   text: (color, fontSize) => ({
     fontSize: fontSize,

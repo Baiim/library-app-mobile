@@ -3,8 +3,10 @@ import React from 'react';
 import ButtonCategoryComponent from '../ButtonCategory';
 import Gap from '../Gap';
 import ButtonComponent from '../Button';
+import {useNavigation} from '@react-navigation/native';
 
 const BookCardHomeComponent = ({image, title, onPress, day, author}) => {
+  const navigation = useNavigation();
   return (
     <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
       <View style={styles.page}>
@@ -49,7 +51,7 @@ const BookCardHomeComponent = ({image, title, onPress, day, author}) => {
                   text="Detail"
                   fontSize={10}
                   onPress={() => {
-                    navigation.navigate('OrderSummary');
+                    navigation.navigate('BookDetail');
                   }}
                 />
               </View>

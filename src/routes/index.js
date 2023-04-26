@@ -12,6 +12,9 @@ import {
   BookPage,
   BookmarkPage,
   ProfilePage,
+  BookDetail,
+  OrderDetail,
+  SuccessOrder,
 } from '../pages';
 import {BottomNavigatorComponent} from '../components';
 
@@ -79,8 +82,23 @@ const Router = () => {
         options={{headerShown: false}}
       />
       <Stack.Screen
+        name="SuccessOrder"
+        component={SuccessOrder}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
         name="MainApp"
         component={MainApp}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="BookDetail"
+        component={BookDetail}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="OrderDetail"
+        component={OrderDetail}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

@@ -1,6 +1,7 @@
 import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import React from 'react';
 import {
+  BookCardComponent,
   BookCardHomeComponent,
   Gap,
   HeaderHomeComponent,
@@ -43,6 +44,20 @@ const HomePage = ({navigation}) => {
       <ScrollView>
         <View style={styles.content}>
           <Text style={styles.title}>Category</Text>
+          <Gap height={15} />
+          <View style={styles.contentBook}>
+            <BookCardComponent
+              onPress={() => {
+                navigation.navigate('BookDetail');
+              }}
+            />
+            <BookCardComponent />
+          </View>
+          <Gap height={10} />
+          <View style={styles.contentBook}>
+            <BookCardComponent />
+            <BookCardComponent />
+          </View>
         </View>
       </ScrollView>
     </View>
@@ -71,7 +86,6 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    backgroundColor: 'white',
     paddingHorizontal: 20,
     paddingTop: 24,
   },
@@ -82,5 +96,13 @@ const styles = StyleSheet.create({
   },
   scroll: {
     flex: 1,
+  },
+  contentBook: {
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+  },
+  item: {
+    width: '50%',
+    height: '50%',
   },
 });
