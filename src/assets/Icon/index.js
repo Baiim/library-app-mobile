@@ -13,6 +13,12 @@ import ICBookmark from './ic_bookmark.svg';
 import ICAvailable from './ic_shield_green.svg';
 import ICUnavailable from './ic_shield_red.svg';
 import ICDate from './ic_date.svg';
+import ICStar from './ic_star.svg';
+import ICSearch from './ic_search.svg';
+import ICProfile from './ic_profile.svg';
+import ICNext from './ic_next.svg';
+import ICStarYellow from './ic_star_yellow.svg';
+import ICStarGrey from './ic_star_grey.svg';
 
 export {
   ICBack,
@@ -30,4 +36,10 @@ export {
   ICAvailable,
   ICUnavailable,
   ICDate,
+  ICStar,
+  ICSearch,
+  ICProfile,
+  ICNext,
+  ICStarGrey,
+  ICStarYellow,
 };

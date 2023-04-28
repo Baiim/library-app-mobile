@@ -7,23 +7,28 @@ import {
   View,
 } from 'react-native';
 import React from 'react';
-import {Book1, ICBookmark} from '../../assets';
+import {Book1, ICBookmark, ICStar} from '../../assets';
 
-const BookCardComponent = ({onPress}) => {
+const BookCardComponent = ({onPress, rating}) => {
   return (
-    <View style={styles.page}>
-      <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
-        <View style={styles.container}>
-          <View style={styles.bookContainer}>
-            <ImageBackground source={Book1} style={styles.bookStyle}>
-              <View style={styles.icon}>
-                <ICBookmark />
-              </View>
-            </ImageBackground>
+    <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
+      <View style={{flex: 1}}>
+        <View style={{marginBottom: 21, marginHorizontal: 6}}>
+          <View style={styles.container}>
+            <View style={styles.bookContainer}>
+              <ImageBackground source={Book1} style={styles.bookStyle}>
+                <View style={styles.icon}>
+                  <View style={styles.iconContainer}>
+                    <ICStar />
+                    <Text style={styles.ratingText}>{rating}</Text>
+                  </View>
+                </View>
+              </ImageBackground>
+            </View>
           </View>
         </View>
-      </TouchableOpacity>
-    </View>
+      </View>
+    </TouchableOpacity>
   );
 };
 
@@ -34,23 +39,35 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   container: {
-    flex: 1,
     backgroundColor: '#F5F5F5',
-    width: 155,
-    height: 175,
+    width: 140,
+    height: 160,
     borderRadius: 8,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   bookStyle: {
-    width: 117,
-    height: 145,
+    width: 107,
+    height: 135,
   },
   bookContainer: {
     alignItems: 'center',
-    paddingVertical: 15,
-    paddingHorizontal: 15,
+    paddingVertical: 10,
+    paddingHorizontal: 10,
   },
   icon: {
     alignItems: 'flex-end',
-    paddingBottom: -100,
+  },
+  iconContainer: {
+    backgroundColor: 'white',
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderBottomLeftRadius: 8,
+    flexDirection: 'row',
+  },
+  ratingText: {
+    fontSize: 8,
+    fontFamily: 'Poppins-Medium',
+    color: '#020202',
   },
 });

@@ -95,14 +95,25 @@ const BookDetail = ({navigation}) => {
               </View>
             </View>
             <View style={styles.footer}>
-              <ButtonComponent text="Read" textColor="white" color="#3A3ABF" />
-              <Gap height={8} />
-              <ButtonComponent
-                text="Continue"
-                onPress={() => {
-                  navigation.navigate('OrderDetail');
-                }}
-              />
+              <View style={styles.button}>
+                <ButtonComponent
+                  text="Read"
+                  textColor="white"
+                  color="#3A3ABF"
+                  onPress={() => {
+                    navigation.navigate('PDFReader');
+                  }}
+                />
+              </View>
+              <Gap width={8} />
+              <View style={styles.button}>
+                <ButtonComponent
+                  text="Continue"
+                  onPress={() => {
+                    navigation.navigate('OrderDetail');
+                  }}
+                />
+              </View>
             </View>
           </View>
         </ScrollView>
@@ -189,5 +200,12 @@ const styles = StyleSheet.create({
   footer: {
     paddingTop: 23,
     paddingBottom: 23,
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    flex: 1,
+  },
+  button: {
+    flex: 1,
+    width: '100%',
   },
 });

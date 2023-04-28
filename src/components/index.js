@@ -9,6 +9,13 @@ import BookCardHomeComponent from './BookCardHome/Index';
 import ButtonCategoryComponent from './ButtonCategory';
 import BookCardComponent from './BookCard';
 import DatePicker from './DatePicker';
+import TabBookComponent from './TabBook';
+import SearchComponent from './Search';
+import HeaderProfileComponent from './HeaderProfile';
+import ProfileCardComponent from './ProfileCard';
+import TabListBookComponent from './TabListBook';
+import ListBookComponent from './ListBook';
+import RatingComponent from './Rating';
 
 export {
   ButtonComponent,
@@ -22,4 +29,11 @@ export {
   ButtonCategoryComponent,
   BookCardComponent,
   DatePicker,
+  TabBookComponent,
+  SearchComponent,
+  HeaderProfileComponent,
+  ProfileCardComponent,
+  TabListBookComponent,
+  ListBookComponent,
+  RatingComponent,
 };

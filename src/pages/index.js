@@ -11,6 +11,10 @@ import ProfilePage from './Profile';
 import BookDetail from './BookDetail';
 import OrderDetail from './OrderDetail';
 import SuccessOrder from './SuccessOrder';
+import PDFReader from './PDFReader';
+import ProfileSetting from './ProfileSetting';
+import Rating from './Rating';
+import RatingSuccess from './RatingSuccess';
 
 export {
   SplashScreen,
@@ -26,4 +30,8 @@ export {
   BookDetail,
   OrderDetail,
   SuccessOrder,
+  PDFReader,
+  ProfileSetting,
+  Rating,
+  RatingSuccess,
 };

@@ -15,6 +15,10 @@ import {
   BookDetail,
   OrderDetail,
   SuccessOrder,
+  PDFReader,
+  ProfileSetting,
+  Rating,
+  RatingSuccess,
 } from '../pages';
 import {BottomNavigatorComponent} from '../components';
 
@@ -99,6 +103,26 @@ const Router = () => {
       <Tab.Screen
         name="OrderDetail"
         component={OrderDetail}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="PDFReader"
+        component={PDFReader}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="ProfileSetting"
+        component={ProfileSetting}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="Rating"
+        component={Rating}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="RatingSuccess"
+        component={RatingSuccess}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

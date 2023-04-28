@@ -23,5 +23,7 @@ const styles = StyleSheet.create({
     borderColor: '#020202',
     borderRadius: 8,
     padding: 10,
+    fontSize: 14,
+    fontFamily: 'Poppins-Regular',
   },
 });

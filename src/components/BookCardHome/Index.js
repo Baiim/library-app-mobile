@@ -4,6 +4,7 @@ import ButtonCategoryComponent from '../ButtonCategory';
 import Gap from '../Gap';
 import ButtonComponent from '../Button';
 import {useNavigation} from '@react-navigation/native';
+import {ICStar} from '../../assets';
 
 const BookCardHomeComponent = ({image, title, onPress, day, author}) => {
   const navigation = useNavigation();
@@ -15,7 +16,10 @@ const BookCardHomeComponent = ({image, title, onPress, day, author}) => {
           <View style={{flex: 1}}>
             <View style={styles.titleContainer}>
               <Text style={styles.title}>{title}</Text>
-              <Text style={styles.title}>Rating</Text>
+              <View style={styles.rating}>
+                <ICStar />
+                <Text style={styles.ratingTitle}>4.5</Text>
+              </View>
             </View>
             <Text style={styles.subTitle}>By {author}</Text>
             <View style={styles.buttonCategory}>
@@ -38,7 +42,7 @@ const BookCardHomeComponent = ({image, title, onPress, day, author}) => {
                 fontSize={8}
               />
             </View>
-            <Gap height={29} />
+            <Gap height={20} />
             <View style={styles.footer}>
               <View style={styles.priceContainer}>
                 <Text style={styles.title}>Due Date :</Text>
@@ -129,5 +133,17 @@ const styles = StyleSheet.create({
   titleContainer: {
     justifyContent: 'space-between',
     flexDirection: 'row',
+  },
+  rating: {
+    backgroundColor: 'white',
+    borderRadius: 8,
+    paddingHorizontal: 3,
+    paddingVertical: 3,
+    flexDirection: 'row',
+  },
+  ratingTitle: {
+    fontSize: 8,
+    fontFamily: 'Poppins-Medium',
+    color: '#020202',
   },
 });

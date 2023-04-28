@@ -5,6 +5,7 @@ import {
   BookCardHomeComponent,
   Gap,
   HeaderHomeComponent,
+  TabBookComponent,
 } from '../../components';
 import 'react-native-pager-view';
 import {Book1, Book2, Book3} from '../../assets';
@@ -41,25 +42,12 @@ const HomePage = ({navigation}) => {
           </View>
         </ScrollView>
       </View>
-      <ScrollView>
-        <View style={styles.content}>
-          <Text style={styles.title}>Category</Text>
-          <Gap height={15} />
-          <View style={styles.contentBook}>
-            <BookCardComponent
-              onPress={() => {
-                navigation.navigate('BookDetail');
-              }}
-            />
-            <BookCardComponent />
-          </View>
-          <Gap height={10} />
-          <View style={styles.contentBook}>
-            <BookCardComponent />
-            <BookCardComponent />
-          </View>
+      <View style={styles.content}>
+        <Text style={styles.title}>Category</Text>
+        <View style={styles.contentBook}>
+          <TabBookComponent />
         </View>
-      </ScrollView>
+      </View>
     </View>
   );
 };
@@ -74,9 +62,6 @@ const styles = StyleSheet.create({
   foodCardContainer: {
     flexDirection: 'row',
     marginVertical: 5,
-  },
-  tabContainer: {
-    flex: 1,
   },
   container: {
     backgroundColor: '#3A3ABF',
@@ -98,8 +83,7 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   contentBook: {
-    flexWrap: 'wrap',
-    flexDirection: 'row',
+    flex: 1,
   },
   item: {
     width: '50%',
