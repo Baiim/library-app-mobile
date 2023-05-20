@@ -6,6 +6,7 @@ import {
   ProfileCardComponent,
   TabListBookComponent,
 } from '../../components';
+import COLOR from '../../utils/color';
 
 const ProfilePage = ({navigation}) => {
   return (
@@ -37,7 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   container: {
-    backgroundColor: '#3A3ABF',
+    backgroundColor: COLOR.blue,
     borderBottomRightRadius: 10,
     borderBottomLeftRadius: 10,
   },

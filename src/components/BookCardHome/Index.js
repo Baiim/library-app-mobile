@@ -5,6 +5,7 @@ import Gap from '../Gap';
 import ButtonComponent from '../Button';
 import {useNavigation} from '@react-navigation/native';
 import {ICStar} from '../../assets';
+import COLOR from '../../utils/color';
 
 const BookCardHomeComponent = ({image, title, onPress, day, author}) => {
   const navigation = useNavigation();
@@ -83,13 +84,22 @@ const styles = StyleSheet.create({
   },
   container: {
     flexDirection: 'row',
-    backgroundColor: '#6161E7',
+    backgroundColor: COLOR.blue2,
     paddingHorizontal: 19,
     paddingVertical: 19,
     width: 308,
     height: 159,
     borderRadius: 5,
     marginRight: 24,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
     // alignItems: 'center',
   },
   title: {

@@ -1,9 +1,10 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
+import COLOR from '../../utils/color';
 
 const ButtonCategoryComponent = ({
   text,
-  color = '#FFC700',
+  color = COLOR.yellow,
   textColor = '#020202',
   onPress,
   width,
@@ -33,6 +34,7 @@ const styles = StyleSheet.create({
     marginTop: 3,
     alignItems: 'center',
     borderWidth: borderWidth,
+    borderColor: COLOR.white
   }),
   text: (color, fontSize) => ({
     fontSize: fontSize,

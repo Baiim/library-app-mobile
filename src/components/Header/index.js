@@ -2,6 +2,7 @@ import {StyleSheet, Text, Touchable, View} from 'react-native';
 import React from 'react';
 import {ICBackWhite} from '../../assets';
 import {TouchableOpacity} from 'react-native-gesture-handler';
+import COLOR from '../../utils/color';
 
 const HeaderComponent = ({title, subTitle, onBack}) => {
   return (
@@ -25,7 +26,7 @@ export default HeaderComponent;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#3A3ABF',
+    backgroundColor: COLOR.blue,
     paddingHorizontal: 24,
     paddingTop: 30,
     paddingBottom: 24,
@@ -35,12 +36,12 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontFamily: 'Poppins-Medium',
-    color: 'white',
+    color: COLOR.white,
   },
   subTitle: {
     fontSize: 14,
     fontFamily: 'Poppins-Light',
-    color: 'white',
+    color: COLOR.white,
   },
   back: {
     padding: 16,

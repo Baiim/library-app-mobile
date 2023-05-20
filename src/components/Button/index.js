@@ -1,9 +1,10 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
+import COLOR from '../../utils/color';
 
 const ButtonComponent = ({
   text,
-  color = '#FFC700',
+  color = COLOR.yellow,
   textColor = '#020202',
   onPress,
 }) => {

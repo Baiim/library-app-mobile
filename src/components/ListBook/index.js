@@ -1,6 +1,7 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
+import COLOR from '../../utils/color';
 
 const ListBookComponent = ({
   image,
@@ -90,7 +91,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   rating: {
-    backgroundColor: '#FFC700',
+    backgroundColor: COLOR.yellow,
     paddingHorizontal: 12,
     paddingVertical: 4,
     borderRadius: 8,

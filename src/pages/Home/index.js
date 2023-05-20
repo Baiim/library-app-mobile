@@ -9,6 +9,7 @@ import {
 } from '../../components';
 import 'react-native-pager-view';
 import {Book1, Book2, Book3} from '../../assets';
+import COLOR from '../../utils/color';
 
 const HomePage = ({navigation}) => {
   return (
@@ -43,9 +44,9 @@ const HomePage = ({navigation}) => {
         </ScrollView>
       </View>
       <View style={styles.content}>
-        <Text style={styles.title}>Category</Text>
+        <Text style={styles.title}>Recomended</Text>
         <View style={styles.contentBook}>
-          <TabBookComponent />
+          <BookCardComponent/>
         </View>
       </View>
     </View>
@@ -64,7 +65,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
   },
   container: {
-    backgroundColor: '#3A3ABF',
+    backgroundColor: COLOR.blue,
     paddingBottom: 18,
     borderBottomRightRadius: 12,
     borderBottomLeftRadius: 12,
@@ -84,6 +85,7 @@ const styles = StyleSheet.create({
   },
   contentBook: {
     flex: 1,
+    paddingTop: 24
   },
   item: {
     width: '50%',

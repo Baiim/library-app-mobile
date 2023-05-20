@@ -4,6 +4,7 @@ import {Book1, ICAvailable, Profile} from '../../assets';
 import ButtonComponent from '../Button';
 import Gap from '../Gap';
 import ButtonCategoryComponent from '../ButtonCategory';
+import COLOR from '../../utils/color';
 
 const ProfileCardComponent = ({navigation}) => {
   return (
@@ -17,14 +18,11 @@ const ProfileCardComponent = ({navigation}) => {
           <View style={styles.detail}>
             <Image source={Profile} style={styles.profilePic} />
             <View style={styles.textContainer}>
-              <Text style={styles.text}>Sektiawan Bimo Prihpambudi</Text>
+              <Text style={styles.text}>SEKTIAWAN BIMO PRIHPAMBUDI</Text>
               <Text style={styles.text}>311810250</Text>
-              <Text style={styles.text}>Sektia7@gmail.com</Text>
-              <Text style={styles.text}>Kp. Pulojahe RT/RW 007/014</Text>
+              <Text style={styles.text}>SEKTIA&@GMAIL.COM</Text>
+              <Text style={styles.text}>KP. PULOJAHE RT. 007/ RW. 014</Text>
             </View>
-          </View>
-          <View style={styles.number}>
-            <Text style={styles.textNumber}>23-123-123-197</Text>
           </View>
           <View style={styles.footer}>
             <View style={styles.button}>
@@ -42,6 +40,7 @@ const ProfileCardComponent = ({navigation}) => {
                 text="Edit"
                 textColor="white"
                 color="#3A3ABF"
+                borderWidth={1}
                 onPress={() => {
                   navigation.navigate('PDFReader');
                 }}
@@ -71,12 +70,21 @@ const styles = StyleSheet.create({
     borderRadius: 8,
   },
   detailProfile: {
-    backgroundColor: '#6161E7',
+    backgroundColor: COLOR.blue2,
     paddingHorizontal: 19,
     paddingTop: 12,
     width: 308,
-    height: 240,
-    borderRadius: 5,
+    height: 180,
+    borderRadius: 10,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+
+    elevation: 5,
   },
   text: {
     fontSize: 12,
@@ -94,7 +102,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-end',
     alignItems: 'center',
-    paddingBottom: 18,
     // backgroundColor: 'yellow',
   },
   number: {
@@ -110,6 +117,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     flexDirection: 'row',
     flex: 1,
+    paddingTop: 16,
   },
   button: {
     flex: 1,

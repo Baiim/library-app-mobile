@@ -1,22 +1,22 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
-import {Welcome} from '../../assets';
+import { Welcome2 } from '../../assets';
 import {ButtonComponent} from '../../components';
+import COLOR from '../../utils/color';
 
 const WelcomeScreen = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <Welcome />
+      <Welcome2 />
       <View style={styles.content}>
-        <Text style={styles.title}>Read book to Improve your knowledge</Text>
+        <Text style={styles.title}>Open Book and Open the World</Text>
         <View style={styles.subContent}>
           <Text style={styles.subTitle}>
-            We collected and distilled the knowledge of
+            Open your book to improve
           </Text>
           <Text style={styles.subTitle}>
-            several experienced design , We collected
+            your knowledge
           </Text>
-          <Text style={styles.subTitle}>and distilled the knowledge</Text>
         </View>
         <View style={styles.button}>
           <ButtonComponent
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    backgroundColor: '#3A3ABF',
+    backgroundColor: COLOR.blue,
     borderTopRightRadius: 30,
     borderTopLeftRadius: 30,
     marginTop: -30,
@@ -49,22 +49,22 @@ const styles = StyleSheet.create({
     paddingHorizontal: 42,
   },
   title: {
-    fontSize: 20,
+    fontSize: 25,
     fontFamily: 'Poppins-Bold',
-    color: 'white',
+    color: COLOR.white,
     textAlign: 'center',
     marginTop: 25,
   },
   subTitle: {
-    fontSize: 12,
-    fontFamily: 'Poppins-Light',
-    color: '#8D92A3',
+    fontSize: 14,
+    fontFamily: 'Poppins-Medium',
+    color: COLOR.white,
     textAlign: 'center',
   },
   button: {
     paddingHorizontal: 83,
     marginTop: 52,
-    paddingBottom: 24,
+    flex: 1,
   },
   subContent: {
     paddingTop: 15,

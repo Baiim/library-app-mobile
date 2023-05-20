@@ -2,6 +2,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {ButtonComponent, Gap} from '../../components';
 import {ILRatingSuccess} from '../../assets';
+import COLOR from '../../utils/color';
 
 const RatingSuccess = ({navigation}) => {
   return (
@@ -19,7 +20,7 @@ const RatingSuccess = ({navigation}) => {
       <Gap height={30} />
       <View style={styles.buttonContainer}>
         <ButtonComponent
-          color="#FFC700"
+          color={COLOR.yellow}
           textColor="#020202"
           text="Home"
           onPress={() => {
