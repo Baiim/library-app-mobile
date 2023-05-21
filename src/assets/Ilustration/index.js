@@ -6,5 +6,18 @@ import SCOrder from './SuccessOrder.svg';
 import Profile from './Profile.png';
 import ILRating from './ILRating.svg';
 import ILRatingSuccess from './ILRatingSuccess.svg';
+import LoadingGif from './loading.gif';
+import Maintenace from './Maintenance.svg';
 
-export {Splash, Welcome, SCSignUp, SCOrder, Profile, ILRating, ILRatingSuccess, Welcome2};
+export {
+  Splash,
+  Welcome,
+  SCSignUp,
+  SCOrder,
+  Profile,
+  ILRating,
+  ILRatingSuccess,
+  Welcome2,
+  LoadingGif,
+  Maintenace,
+};

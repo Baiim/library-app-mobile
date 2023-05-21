@@ -19,6 +19,7 @@ import {
   ProfileSetting,
   Rating,
   RatingSuccess,
+  MaintenancePage,
 } from '../pages';
 import {BottomNavigatorComponent} from '../components';
 
@@ -123,6 +124,11 @@ const Router = () => {
       <Tab.Screen
         name="RatingSuccess"
         component={RatingSuccess}
+        options={{headerShown: false}}
+      />
+      <Tab.Screen
+        name="MaintenancePage"
+        component={MaintenancePage}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

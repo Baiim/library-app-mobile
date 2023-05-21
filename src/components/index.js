@@ -16,6 +16,7 @@ import ProfileCardComponent from './ProfileCard';
 import TabListBookComponent from './TabListBook';
 import ListBookComponent from './ListBook';
 import RatingComponent from './Rating';
+import LoadingComponent from './Loading';
 
 export {
   ButtonComponent,
@@ -36,4 +37,5 @@ export {
   TabListBookComponent,
   ListBookComponent,
   RatingComponent,
+  LoadingComponent,
 };

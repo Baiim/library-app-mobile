@@ -15,6 +15,7 @@ import PDFReader from './PDFReader';
 import ProfileSetting from './ProfileSetting';
 import Rating from './Rating';
 import RatingSuccess from './RatingSuccess';
+import MaintenancePage from './Maintenance';
 
 export {
   SplashScreen,
@@ -34,4 +35,5 @@ export {
   ProfileSetting,
   Rating,
   RatingSuccess,
+  MaintenancePage,
 };

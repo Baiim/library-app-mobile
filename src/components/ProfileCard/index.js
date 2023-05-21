@@ -5,8 +5,10 @@ import ButtonComponent from '../Button';
 import Gap from '../Gap';
 import ButtonCategoryComponent from '../ButtonCategory';
 import COLOR from '../../utils/color';
+import {useNavigation} from '@react-navigation/native';
 
-const ProfileCardComponent = ({navigation}) => {
+const ProfileCardComponent = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.page}>
       <View style={styles.container}>
@@ -29,7 +31,7 @@ const ProfileCardComponent = ({navigation}) => {
               <ButtonCategoryComponent
                 text="Detail"
                 onPress={() => {
-                  navigation.navigate('OrderDetail');
+                  navigation.navigate('MaintenancePage');
                 }}
               />
             </View>

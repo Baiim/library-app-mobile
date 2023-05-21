@@ -20,6 +20,21 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import {SplashScreen} from './pages';
 import Router from './routes';
+import {Provider, useSelector} from 'react-redux';
+import store from './redux/store';
+import FlashMessage from 'react-native-flash-message';
+import {LoadingComponent} from './components';
+
+const MainApp = () => {
+  const {isLoading} = useSelector(state => state.globalReducer);
+  return (
+    <NavigationContainer>
+      <Router />
+      <FlashMessage position="top" />
+      {isLoading && <LoadingComponent />}
+    </NavigationContainer>
+  );
+};
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
@@ -29,9 +44,9 @@ const App = () => {
   };
 
   return (
-    <NavigationContainer>
-      <Router />
-    </NavigationContainer>
+    <Provider store={store}>
+      <MainApp />
+    </Provider>
   );
 };
 
