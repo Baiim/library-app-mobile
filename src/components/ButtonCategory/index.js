@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     marginTop: 3,
     alignItems: 'center',
     borderWidth: borderWidth,
-    borderColor: COLOR.white
+    borderColor: COLOR.blue
   }),
   text: (color, fontSize) => ({
     fontSize: fontSize,
