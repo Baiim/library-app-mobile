@@ -1,10 +1,46 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Welcome2 } from '../../assets';
 import {ButtonComponent} from '../../components';
 import COLOR from '../../utils/color';
+import {getData, storeData} from '@utils/localStorage';
+import { useState } from 'react';
 
 const WelcomeScreen = ({navigation}) => {
+  const [isLogin, setIsLogin] = useState(false);
+
+  const checkToken = async () => {
+    const token = await getData('accessToken');
+    if (token?.accessToken && token?.refreshToken) {
+      // refreshToken();
+      setIsLogin(true);
+    } else {
+      setIsLogin(false);
+    }
+  };
+  
+  // const refreshToken = async () => {
+  //   try {
+  //     const refreshedToken = await api.refreshToken(token?.refreshToken);
+  //     console.log(refreshedToken);
+  //     await storeData('accessToken', refreshedToken.accessToken);
+  //     await storeData('refreshToken', refreshedToken.refreshToken);
+  //     setIsLogin(true);
+  //   } catch (error) {
+  //     navigation.navigate('SignIn');
+  //   }
+  // };
+  
+  useEffect(() => {
+    checkToken();
+  }, []);
+  
+  const navigate = ()=>{
+    if (isLogin) {
+      return navigation.navigate('MainApp')
+    }
+    navigation.navigate('SignIn')
+  }
   return (
     <View style={styles.page}>
       <Welcome2 />
@@ -22,9 +58,7 @@ const WelcomeScreen = ({navigation}) => {
           <ButtonComponent
             text="Start"
             textColor="#020202"
-            onPress={() => {
-              navigation.navigate('SignIn');
-            }}
+            onPress={navigate}
           />
         </View>
       </View>

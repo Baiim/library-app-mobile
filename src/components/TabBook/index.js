@@ -46,9 +46,6 @@ const InProgress = () => {
           }}
           rating={5.0}
         />
-        <BookCardComponent rating={4.5} />
-        <BookCardComponent rating={3.0} />
-        <BookCardComponent rating={2.0} />
       </View>
     </ScrollView>
   );

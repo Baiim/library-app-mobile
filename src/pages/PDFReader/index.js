@@ -3,15 +3,24 @@ import React from 'react';
 import {HeaderComponent} from '../../components';
 import Pdf from 'react-native-pdf';
 import {PDF} from '../../assets';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
-const PDFReader = () => {
+const PDFReader = ({route}) => {
+  const [pdfUrl, setPdfUrl] = useState('')
+
+  useEffect(() => {
+  if (route.params) {
+    setPdfUrl(route.params)
+  }
+  }, [route.params])
   return (
     <View style={styles.page}>
-      <HeaderComponent title="Danur" subTitle="By Risa Saraswati" onBack />
+      <HeaderComponent title={pdfUrl.title} subTitle={`by ${pdfUrl.author}`} onBack />
       <View style={styles.container}>
         <Pdf
           trustAllCerts={false}
-          source={PDF}
+          source={{uri: pdfUrl.uri, cache: true}}
           onLoadComplete={(numberOfPages, filePath) => {
             // console.log(`Number of pages: ${numberOfPages}`);
           }}

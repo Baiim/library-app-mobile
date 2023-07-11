@@ -7,7 +7,7 @@ import ButtonCategoryComponent from '../ButtonCategory';
 import COLOR from '../../utils/color';
 import {useNavigation} from '@react-navigation/native';
 
-const ProfileCardComponent = () => {
+const ProfileCardComponent = ({name,nim,email,address,imageUrl}) => {
   const navigation = useNavigation();
   return (
     <View style={styles.page}>
@@ -18,12 +18,12 @@ const ProfileCardComponent = () => {
             <Text style={styles.text}>Verified</Text>
           </View>
           <View style={styles.detail}>
-            <Image source={Profile} style={styles.profilePic} />
+            <Image source={{uri:imageUrl}} style={styles.profilePic} />
             <View style={styles.textContainer}>
-              <Text style={styles.text}>SEKTIAWAN BIMO PRIHPAMBUDI</Text>
-              <Text style={styles.text}>311810250</Text>
-              <Text style={styles.text}>SEKTIA&@GMAIL.COM</Text>
-              <Text style={styles.text}>KP. PULOJAHE RT. 007/ RW. 014</Text>
+              <Text style={styles.text}>{name}</Text>
+              <Text style={styles.text}>{nim}</Text>
+              <Text style={styles.text}>{email}</Text>
+              <Text style={styles.text}>{address}</Text>
             </View>
           </View>
           <View style={styles.footer}>

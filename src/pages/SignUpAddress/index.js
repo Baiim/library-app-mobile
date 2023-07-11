@@ -27,8 +27,6 @@ const SignUpAddress = ({navigation}) => {
           <Gap height={16} />
           <SelectInputComponent label="Gender" />
           <Gap height={16} />
-          <SelectInputComponent label="NIM/NIDN" />
-          <Gap height={16} />
           <TextInputComponent
             label="NIM/NIDN"
             placeholder="Type your NIM/NIDN"

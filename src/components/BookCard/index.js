@@ -9,18 +9,18 @@ import {
 import React from 'react';
 import {Book1, ICBookmark, ICStar} from '../../assets';
 
-const BookCardComponent = ({onPress, rating}) => {
+const BookCardComponent = ({onPress, year, imageUrl}) => {
   return (
     <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
       <View style={{flex: 1}}>
         <View style={{marginBottom: 21, marginHorizontal: 6}}>
           <View style={styles.container}>
             <View style={styles.bookContainer}>
-              <ImageBackground source={Book1} style={styles.bookStyle}>
+              <ImageBackground source={{uri:imageUrl}} style={styles.bookStyle}>
                 <View style={styles.icon}>
                   <View style={styles.iconContainer}>
-                    <ICStar />
-                    <Text style={styles.ratingText}>{rating}</Text>
+                      {/* <ICStar /> */}
+                    <Text style={styles.ratingText}>{year}</Text>
                   </View>
                 </View>
               </ImageBackground>

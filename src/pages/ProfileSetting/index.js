@@ -1,10 +1,27 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {ButtonComponent, HeaderComponent} from '../../components';
 import {ICNext} from '../../assets';
 import {useNavigation} from '@react-navigation/native';
+import API from '@utils/service/authProvider';
+import {removeData, getData} from '@utils/localStorage';
 
 const ProfileSetting = () => {
+  const [loading, setLoading] = useState(false);
+  const logout = async () => {
+      setLoading(true);
+      const token = await getData('accessToken');
+      if (Object.keys(token).length) {
+        const resp = await API.logout({dataToken: {...token}}, token.accessToken);
+        console.log('LOGOUT', resp);
+        if (resp.status === 200) {
+            await Promise.resolve(removeData('accessToken'));
+            navigation.navigate('SignIn');
+        }
+      }
+      setLoading(false);
+  };
+  
   const navigation = useNavigation();
   return (
     <View style={styles.page}>
@@ -33,7 +50,7 @@ const ProfileSetting = () => {
           <ICNext />
         </View>
         <View style={styles.footer}>
-          <ButtonComponent text="Logout" color="#FF0000" textColor="white" />
+          <ButtonComponent text="Logout" color="#FF0000" textColor="white" onPress={logout} />
           <View style={{alignItems: 'center'}}>
             <Text style={styles.versionText}>version 1.0.0</Text>
           </View>

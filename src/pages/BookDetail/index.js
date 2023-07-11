@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React from 'react';
+import React, {useState, useCallback} from 'react';
 import {Book4, ICAvailable, ICBackWhite} from '../../assets';
 import {
   ButtonCategoryComponent,
@@ -14,12 +14,35 @@ import {
   DatePicker,
   Gap,
 } from '../../components';
+import { useFocusEffect } from '@react-navigation/native';
+import {getData} from '@utils/localStorage';
+import API from '../../utils/service/homeProvider';
 
-const BookDetail = ({navigation}) => {
+const BookDetail = ({navigation, route}) => {
+  const { id } = route.params;
+  const [getBookDetail, setGetBookDetail] = useState([]);
+
+  useFocusEffect(
+      useCallback(() => {
+          const getDataDetailBook = async () => {
+              const token = await getData('accessToken');
+              const resp = await API.getDetailBook(token.accessToken,id);
+              if (resp.status === 200) {
+                  setGetBookDetail(resp?.data?.result || []);
+              }
+          };
+
+          getDataDetailBook();
+      }, [id]),
+  );
+
+  const handleGoBack = () => {
+    navigation.goBack();
+  };
   return (
     <View style={styles.page}>
-      <ImageBackground source={Book4} style={styles.cover}>
-        <TouchableOpacity style={styles.iconBack}>
+      <ImageBackground source={{uri: getBookDetail.imgUrl}} style={styles.cover}>
+        <TouchableOpacity style={styles.iconBack} onPress={handleGoBack}>
           <ICBackWhite />
         </TouchableOpacity>
       </ImageBackground>
@@ -27,9 +50,9 @@ const BookDetail = ({navigation}) => {
         <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
           <View style={styles.mainContent}>
             <View style={styles.bookContainer}>
-              <View>
-                <Text style={styles.bookTitle}>A Leader</Text>
-                <Text style={styles.bookSubTitle}>By Yosef Gunawan</Text>
+              <View style={{flex: 1}}>
+                <Text style={styles.bookTitle}>{getBookDetail.title}</Text>
+                <Text style={styles.bookSubTitle}>By {getBookDetail.author}</Text>
               </View>
               <View style={styles.available}>
                 <ICAvailable />
@@ -62,21 +85,20 @@ const BookDetail = ({navigation}) => {
             <View style={styles.sinopsis}>
               <Text style={styles.titleSinopsis}>Sinopsis</Text>
               <Text style={styles.contentSinopsis}>
-                is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard
+                  {getBookDetail.synopsis}
               </Text>
             </View>
             <View>
               <Text style={styles.titleSinopsis}>Info</Text>
               <View style={styles.info}>
                 <View>
-                  <Text style={styles.contentSinopsis}>Risa Saraswati</Text>
-                  <Text style={styles.contentSinopsis}>2018</Text>
+                  <Text style={styles.contentSinopsis}>{getBookDetail.author}</Text>
+                  <Text style={styles.contentSinopsis}>{getBookDetail.year}</Text>
                 </View>
                 <View>
-                  <Text style={styles.contentSinopsis}>325 Page</Text>
+                  <Text style={styles.contentSinopsis}>{getBookDetail.pageSize} Page</Text>
                   <Text style={styles.contentSinopsis}>
-                    PT. Indah Permata Buku
+                    {getBookDetail.publisher}
                   </Text>
                 </View>
               </View>
@@ -101,7 +123,7 @@ const BookDetail = ({navigation}) => {
                   textColor="white"
                   color="#3A3ABF"
                   onPress={() => {
-                    navigation.navigate('PDFReader');
+                    navigation.navigate('PDFReader', {uri: getBookDetail.pdfUrl,title: getBookDetail.title, author: getBookDetail.author});
                   }}
                 />
               </View>
@@ -156,6 +178,8 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontFamily: 'Poppins-Medium',
     color: '#020202',
+    flex:1,
+    flexWrap: 'wrap'
   },
   bookSubTitle: {
     fontSize: 14,
@@ -163,7 +187,7 @@ const styles = StyleSheet.create({
     color: '#C4C4C4',
   },
   bookAvailable: {
-    fontSize: 16,
+    fontSize: 14,
     fontFamily: 'Poppins-Medium',
     color: '#020202',
   },
@@ -174,6 +198,7 @@ const styles = StyleSheet.create({
   available: {
     flexDirection: 'row',
     justifyContent: 'space-between',
+    marginLeft: 8
   },
   buttonCategory: {
     paddingTop: 4,
